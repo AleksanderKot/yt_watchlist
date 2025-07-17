@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.5 on win32)" generated="2025-07-17T09:36:09.961449" rpa="false" schemaversion="5">
+<suite id="s1" name="Yt Watchlist" source="C:\Dev\yt_watchlist">
+<suite id="s1-s1" name="Tests" source="C:\Dev\yt_watchlist\Tests">
+<suite id="s1-s1-s1" name="Test Watchlist" source="C:\Dev\yt_watchlist\Tests\test_watchlist.robot">
+<test id="s1-s1-s1-t1" name="Log Into Youtube To Delete Watchlist" line="8">
+<kw name="Youtube Login" owner="keywords">
+<kw name="New Browser" owner="Browser">
+<msg time="2025-07-17T09:36:10.262648" level="INFO">{"browser": "chromium", "headless": false, "args": ["--disable-blink-features=AutomationControlled"], "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\Dev\\yt_watchlist\\results\\browser\\traces\\temp\\728e8f56-c528-4499-bae0-3ab94ac22d69"}</msg>
+<msg time="2025-07-17T09:36:10.339475" level="INFO">Starting Browser process C:\Dev\yt_watchlist\.kota\Lib\site-packages\Browser\wrapper\index.js using at 127.0.0.1:51722</msg>
+<msg time="2025-07-17T09:36:12.211108" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"args":["--disable-blink-features=AutomationControlled"],"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\Dev\\yt_watchlist\\results\\browser\\traces\\temp\\728e8f56-c528-4499-bae0-3ab94ac22d69"}</msg>
+<arg>chromium</arg>
+<arg>headless=${False}</arg>
+<arg>args=["--disable-blink-features=AutomationControlled"]</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2025-07-17T09:36:10.260347" elapsed="1.951671"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2025-07-17T09:36:14.962117" level="INFO">Successfully initialized new page object and opened url: https://www.youtube.com</msg>
+<msg time="2025-07-17T09:36:14.963303" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<arg>https://www.youtube.com</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2025-07-17T09:36:12.212525" elapsed="2.752004"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-07-17T09:36:14.968323" level="INFO">Clicks the element 'xpath=//*[@id="content"]/div[2]/div[6]/div[1]/ytd-button-renderer[2]/yt-button-shape/button'.</msg>
+<arg>xpath=//*[@id="content"]/div[2]/div[6]/div[1]/ytd-button-renderer[2]/yt-button-shape/button</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-07-17T09:36:14.965078" elapsed="0.260730"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-07-17T09:36:15.227919" level="INFO">Clicks the element 'xpath=(//a[@aria-label="Sign in" and contains(@href, "ServiceLogin")])[1]'.</msg>
+<arg>xpath=(//a[@aria-label="Sign in" and contains(@href, "ServiceLogin")])[1]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-07-17T09:36:15.226201" elapsed="2.695243"/>
+</kw>
+<kw name="Get Element" owner="Browser">
+<msg time="2025-07-17T09:36:18.088757" level="INFO">Locator found successfully.</msg>
+<msg time="2025-07-17T09:36:18.089337" level="INFO">${element} = xpath=//*[@id="identifierId"]</msg>
+<var>${element}</var>
+<arg>xpath=//*[@id="identifierId"]</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to a Playwright [https://playwright.dev/docs/api/class-locator|Locator].</doc>
+<status status="PASS" start="2025-07-17T09:36:17.922786" elapsed="0.166873"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-07-17T09:36:18.091867" level="INFO">Fills the text 'akot522@gmail.com' in the given field.</msg>
+<arg>${element}</arg>
+<arg>${YT_LOGIN}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-07-17T09:36:18.089960" elapsed="0.066632"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-07-17T09:36:18.163903" level="INFO">Clicks the element 'xpath=//*[@id="identifierNext"]/div/button'.</msg>
+<arg>xpath=//*[@id="identifierNext"]/div/button</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-07-17T09:36:18.157993" elapsed="0.097003"/>
+</kw>
+<kw name="Get Element" owner="Browser">
+<msg time="2025-07-17T09:36:23.924200" level="INFO">Locator found successfully.</msg>
+<msg time="2025-07-17T09:36:23.925910" level="INFO">${element} = xpath=//*[@id="password"]/div[1]/div/div[1]/input</msg>
+<var>${element}</var>
+<arg>xpath=//*[@id="password"]/div[1]/div/div[1]/input</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to a Playwright [https://playwright.dev/docs/api/class-locator|Locator].</doc>
+<status status="PASS" start="2025-07-17T09:36:18.255912" elapsed="5.671326"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-07-17T09:36:23.931897" level="INFO">Fills the text 'TheDreadnoughts2005' in the given field.</msg>
+<arg>${element}</arg>
+<arg>${YT_PASSWORD}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-07-17T09:36:23.928213" elapsed="0.103157"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-07-17T09:36:24.033151" level="INFO">Clicks the element 'xpath=//*[@id="passwordNext"]/div/button'.</msg>
+<arg>xpath=//*[@id="passwordNext"]/div/button</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-07-17T09:36:24.031688" elapsed="0.134887"/>
+</kw>
+<doc>Opens YouTube and logs in with provided credentials.</doc>
+<status status="PASS" start="2025-07-17T09:36:10.258562" elapsed="13.908267"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-07-17T09:36:29.168879" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-07-17T09:36:24.167598" elapsed="5.001694"/>
+</kw>
+<kw name="Delete Movies" owner="keywords">
+<kw name="Go To" owner="Browser">
+<msg time="2025-07-17T09:36:30.986904" level="INFO">Successfully opened URL https://www.youtube.com/playlist?list=WL</msg>
+<arg>https://www.youtube.com/playlist?list=WL</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="PASS" start="2025-07-17T09:36:29.171315" elapsed="1.816556"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-07-17T09:36:32.990123" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-07-17T09:36:30.988475" elapsed="2.002054"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-07-17T09:36:32.991815" level="INFO">${deleted} = True</msg>
+<var>${deleted}</var>
+<arg>${True}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-07-17T09:36:32.990793" elapsed="0.001395"/>
+</kw>
+<while condition="${deleted}">
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-07-17T09:36:32.994720" level="INFO">${deleted} = False</msg>
+<var>${deleted}</var>
+<arg>${False}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-07-17T09:36:32.993864" elapsed="0.001142"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-07-17T09:36:34.996886" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-07-17T09:36:32.995284" elapsed="2.002754"/>
+</kw>
+<kw name="Get Elements" owner="Browser">
+<msg time="2025-07-17T09:36:35.072785" level="INFO">Found locator('//ytd-playlist-video-renderer').first(),locator('//ytd-playlist-video-renderer').nth(1),locator('//ytd-playlist-video-renderer').nth(2),locator('//ytd-playlist-video-renderer').nth(3),locator('//ytd-playlist-video-renderer').nth(4),locator('//ytd-playlist-video-renderer').nth(5),locator('//ytd-playlist-video-renderer').nth(6),locator('//ytd-playlist-video-renderer').nth(7),locator('//ytd-playlist-video-renderer').nth(8),locator('//ytd-playlist-video-renderer').nth(9),locator('//ytd-playlist-video-renderer').nth(10),locator('//ytd-playlist-video-renderer').nth(11),locator('//ytd-playlist-video-renderer').nth(12),locator('//ytd-playlist-video-renderer').nth(13),locator('//ytd-playlist-video-renderer').nth(14),locator('//ytd-playlist-video-renderer').nth(15),locator('//ytd-playlist-video-renderer').nth(16),locator('//ytd-playlist-video-renderer').nth(17),locator('//ytd-playlist-video-renderer').nth(18),locator('//ytd-playlist-video-renderer').nth(19),locator('//ytd-playlist-video-renderer').nth(20),locator('//ytd-playlist-video-renderer').nth(21),locator('//ytd-playlist-video-renderer').nth(22),locator('//ytd-playlist-video-renderer').nth(23),locator('//ytd-playlist-video-renderer').nth(24),locator('//ytd-playlist-video-renderer').nth(25),locator('//ytd-playlist-video-renderer').nth(26),locator('//ytd-playlist-video-renderer').nth(27),locator('//ytd-playlist-video-renderer').nth(28),locator('//ytd-playlist-video-renderer').nth(29),locator('//ytd-playlist-video-renderer').nth(30),locator('//ytd-playlist-video-renderer').nth(31),locator('//ytd-playlist-video-renderer').nth(32),locator('//ytd-playlist-video-renderer').nth(33),locator('//ytd-playlist-video-renderer').nth(34),locator('//ytd-playlist-video-renderer').nth(35),locator('//ytd-playlist-video-renderer').nth(36),locator('//ytd-playlist-video-renderer').nth(37),locator('//ytd-playlist-video-renderer').nth(38),locator('//ytd-playlist-video-renderer').nth(39),locator('//ytd-playlist-video-renderer').nth(40),locator('//ytd-playlist-video-renderer').nth(41),locator('//ytd-playlist-video-renderer').nth(42),locator('//ytd-playlist-video-renderer').nth(43),locator('//ytd-playlist-video-renderer').nth(44),locator('//ytd-playlist-video-renderer').nth(45),locator('//ytd-playlist-video-renderer').nth(46),locator('//ytd-playlist-video-renderer').nth(47),locator('//ytd-playlist-video-renderer').nth(48),locator('//ytd-playlist-video-renderer').nth(49),locator('//ytd-playlist-video-renderer').nth(50),locator('//ytd-playlist-video-renderer').nth(51),locator('//ytd-playlist-video-renderer').nth(52),locator('//ytd-playlist-video-renderer').nth(53),locator('//ytd-playlist-video-renderer').nth(54),locator('//ytd-playlist-video-renderer').nth(55),locator('//ytd-playlist-video-renderer').nth(56),locator('//ytd-playlist-video-renderer').nth(57),locator('//ytd-playlist-video-renderer').nth(58),locator('//ytd-playlist-video-renderer').nth(59),locator('//ytd-playlist-video-renderer').nth(60),locator('//ytd-playlist-video-renderer').nth(61),locator('//ytd-playlist-video-renderer').nth(62),locator('//ytd-playlist-video-renderer').nth(63),locator('//ytd-playlist-video-renderer').nth(64),locator('//ytd-playlist-video-renderer').nth(65) Locators successfully.</msg>
+<msg time="2025-07-17T09:36:35.074221" level="INFO">${videos} = ['xpath=//ytd-playlist-video-renderer &gt;&gt; nth=0', 'xpath=//ytd-playlist-video-renderer &gt;&gt; nth=1', 'xpath=//ytd-playlist-video-renderer &gt;&gt; nth=2', 'xpath=//ytd-playlist-video-renderer &gt;&gt; nth=3', 'xpath=...</msg>
+<var>${videos}</var>
+<arg>xpath=//ytd-playlist-video-renderer</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to Playwright [https://playwright.dev/docs/api/class-locator|Locator]
+for all matched elements by ``selector``.</doc>
+<status status="PASS" start="2025-07-17T09:36:34.999882" elapsed="0.075126"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Evaluate JavaScript" owner="Browser">
+<msg time="2025-07-17T09:36:35.114901" level="INFO">JavaScript executed successfully.</msg>
+<msg time="2025-07-17T09:36:35.115804" level="INFO">${channel_name} = IGN</msg>
+<var>${channel_name}</var>
+<arg>${video}</arg>
+<arg>(el) =&gt; el.querySelector('div#byline-container a[href*="/@"]')?.textContent</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Executes given javascript on the selected element(s) or on page.</doc>
+<status status="PASS" start="2025-07-17T09:36:35.078477" elapsed="0.037807"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-17T09:36:35.119156" level="INFO">${ns} = {'channel_name': 'IGN'}</msg>
+<var>${ns}</var>
+<arg>channel_name=${channel_name}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-17T09:36:35.116881" elapsed="0.003293"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-07-17T09:36:35.123821" level="INFO">${channel_name} = IGN</msg>
+<var>${channel_name}</var>
+<arg>str(channel_name).strip()</arg>
+<arg>namespace=${ns}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-07-17T09:36:35.120972" elapsed="0.003552"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Delete Single Movie" owner="keywords">
+<kw name="Evaluate JavaScript" owner="Browser">
+<msg time="2025-07-17T09:36:35.153744" level="INFO">JavaScript executed successfully.</msg>
+<arg>${video}</arg>
+<arg>(el) =&gt; el.scrollIntoView({behavior: "smooth", block: "center"})</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Executes given javascript on the selected element(s) or on page.</doc>
+<status status="PASS" start="2025-07-17T09:36:35.129043" elapsed="0.025536"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-07-17T09:36:36.156700" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-07-17T09:36:35.155115" elapsed="1.002299"/>
+</kw>
+<kw name="Evaluate JavaScript" owner="Browser">
+<msg time="2025-07-17T09:36:36.220622" level="INFO">JavaScript executed successfully.</msg>
+<arg>${video}</arg>
+<arg>(el) =&gt; el.querySelector('div#menu button#button')?.click()</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Executes given javascript on the selected element(s) or on page.</doc>
+<status status="PASS" start="2025-07-17T09:36:36.157928" elapsed="0.063235"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-07-17T09:36:37.222381" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-07-17T09:36:36.221447" elapsed="1.001320"/>
+</kw>
+<kw name="Get Elements" owner="Browser">
+<msg time="2025-07-17T09:36:37.233969" level="INFO">Found locator('//ytd-menu-service-item-renderer').first(),locator('//ytd-menu-service-item-renderer').nth(1),locator('//ytd-menu-service-item-renderer').nth(2),locator('//ytd-menu-service-item-renderer').nth(3),locator('//ytd-menu-service-item-renderer').nth(4),locator('//ytd-menu-service-item-renderer').nth(5) Locators successfully.</msg>
+<msg time="2025-07-17T09:36:37.234648" level="INFO">${all_items} = ['//ytd-menu-service-item-renderer &gt;&gt; nth=0', '//ytd-menu-service-item-renderer &gt;&gt; nth=1', '//ytd-menu-service-item-renderer &gt;&gt; nth=2', '//ytd-menu-service-item-renderer &gt;&gt; nth=3', '//ytd-menu-service...</msg>
+<var>${all_items}</var>
+<arg>//ytd-menu-service-item-renderer</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to Playwright [https://playwright.dev/docs/api/class-locator|Locator]
+for all matched elements by ``selector``.</doc>
+<status status="PASS" start="2025-07-17T09:36:37.223014" elapsed="0.012051"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-07-17T09:36:37.273347" level="INFO">Text: 'Dodaj do kolejki'</msg>
+<msg time="2025-07-17T09:36:37.273863" level="INFO">${txt} = Dodaj do kolejki</msg>
+<var>${txt}</var>
+<arg>${item}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-07-17T09:36:37.237144" elapsed="0.037174"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-07-17T09:36:37.275439" level="INFO">MENUITEM: Dodaj do kolejki</msg>
+<arg>MENUITEM: ${txt}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-07-17T09:36:37.274629" elapsed="0.001166"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-17T09:36:37.276862" level="INFO">${ns} = {'txt': 'Dodaj do kolejki'}</msg>
+<var>${ns}</var>
+<arg>txt=${txt}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-17T09:36:37.276049" elapsed="0.001072"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-07-17T09:36:37.278690" level="INFO">${found} = False</msg>
+<var>${found}</var>
+<arg>'Usuń z' in txt or 'Remove from' in txt</arg>
+<arg>namespace=${ns}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-07-17T09:36:37.277388" elapsed="0.001568"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${found}</arg>
+<arg>Click</arg>
+<arg>${item}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-07-17T09:36:37.279232" elapsed="0.000760"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${found}</arg>
+<arg>Sleep</arg>
+<arg>2s</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-07-17T09:36:37.280301" elapsed="0.000594"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${found}</arg>
+<arg>Exit For Loop</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-07-17T09:36:37.281103" elapsed="0.000685"/>
+</kw>
+<var name="${item}">//ytd-menu-service-item-renderer &gt;&gt; nth=0</var>
+<status status="PASS" start="2025-07-17T09:36:37.236632" elapsed="0.045304"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-07-17T09:36:37.301940" level="INFO">Text: 'Zapisz na playliście'</msg>
+<msg time="2025-07-17T09:36:37.302755" level="INFO">${txt} = Zapisz na playliście</msg>
+<var>${txt}</var>
+<arg>${item}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-07-17T09:36:37.282588" elapsed="0.020496"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-07-17T09:36:37.304337" level="INFO">MENUITEM: Zapisz na playliście</msg>
+<arg>MENUITEM: ${txt}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-07-17T09:36:37.303501" elapsed="0.001170"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-17T09:36:37.306107" level="INFO">${ns} = {'txt': 'Zapisz na playliście'}</msg>
+<var>${ns}</var>
+<arg>txt=${txt}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-17T09:36:37.304943" elapsed="0.001495"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-07-17T09:36:37.308130" level="INFO">${found} = False</msg>
+<var>${found}</var>
+<arg>'Usuń z' in txt or 'Remove from' in txt</arg>
+<arg>namespace=${ns}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-07-17T09:36:37.306715" elapsed="0.001773"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${found}</arg>
+<arg>Click</arg>
+<arg>${item}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-07-17T09:36:37.308777" elapsed="0.000732"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${found}</arg>
+<arg>Sleep</arg>
+<arg>2s</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-07-17T09:36:37.309862" elapsed="0.000632"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${found}</arg>
+<arg>Exit For Loop</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-07-17T09:36:37.310755" elapsed="0.000531"/>
+</kw>
+<var name="${item}">//ytd-menu-service-item-renderer &gt;&gt; nth=1</var>
+<status status="PASS" start="2025-07-17T09:36:37.282174" elapsed="0.029266"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-07-17T09:36:37.331432" level="INFO">Text: 'Usuń z „Do obejrzenia”'</msg>
+<msg time="2025-07-17T09:36:37.331986" level="INFO">${txt} = Usuń z „Do obejrzenia”</msg>
+<var>${txt}</var>
+<arg>${item}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-07-17T09:36:37.312086" elapsed="0.020248"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-07-17T09:36:37.333601" level="INFO">MENUITEM: Usuń z „Do obejrzenia”</msg>
+<arg>MENUITEM: ${txt}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-07-17T09:36:37.332647" elapsed="0.001295"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-17T09:36:37.335740" level="INFO">${ns} = {'txt': 'Usuń z „Do obejrzenia”'}</msg>
+<var>${ns}</var>
+<arg>txt=${txt}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-17T09:36:37.334298" elapsed="0.002063"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-07-17T09:36:37.338397" level="INFO">${found} = True</msg>
+<var>${found}</var>
+<arg>'Usuń z' in txt or 'Remove from' in txt</arg>
+<arg>namespace=${ns}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-07-17T09:36:37.336820" elapsed="0.001974"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click" owner="Browser">
+<msg time="2025-07-17T09:36:37.342070" level="INFO">Clicks the element '//ytd-menu-service-item-renderer &gt;&gt; nth=2'.</msg>
+<arg>${item}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-07-17T09:36:37.340133" elapsed="0.126252"/>
+</kw>
+<arg>${found}</arg>
+<arg>Click</arg>
+<arg>${item}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-07-17T09:36:37.339194" elapsed="0.127622"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-07-17T09:36:39.470176" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-07-17T09:36:37.468692" elapsed="2.003048"/>
+</kw>
+<arg>${found}</arg>
+<arg>Sleep</arg>
+<arg>2s</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-07-17T09:36:37.467316" elapsed="2.005170"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Exit For Loop" owner="BuiltIn">
+<msg time="2025-07-17T09:36:39.477821" level="INFO">Exiting for loop altogether.</msg>
+<doc>Stops executing the enclosing FOR loop.</doc>
+<status status="PASS" start="2025-07-17T09:36:39.475943" elapsed="0.003151"/>
+</kw>
+<arg>${found}</arg>
+<arg>Exit For Loop</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-07-17T09:36:39.473293" elapsed="0.006425"/>
+</kw>
+<var name="${item}">//ytd-menu-service-item-renderer &gt;&gt; nth=2</var>
+<status status="PASS" start="2025-07-17T09:36:37.311681" elapsed="2.168515"/>
+</iter>
+<var>${item}</var>
+<value>@{all_items}</value>
+<status status="PASS" start="2025-07-17T09:36:37.235396" elapsed="2.245507"/>
+</for>
+<arg>${video}</arg>
+<status status="PASS" start="2025-07-17T09:36:35.127740" elapsed="4.354294"/>
+</kw>
+<arg>'${channel_name}' == '${CHANNEL_TO_DELETE}'</arg>
+<arg>Delete Single Movie</arg>
+<arg>${video}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-07-17T09:36:35.125062" elapsed="4.357679"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Set Variable" owner="BuiltIn">
+<arg>${deleted}</arg>
+<arg>${True}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-07-17T09:36:39.487854" elapsed="0.001774"/>
+</kw>
+<arg>'${channel_name}' == '${CHANNEL_TO_DELETE}'</arg>
+<arg>Set Variable</arg>
+<arg>${deleted}</arg>
+<arg>${True}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-07-17T09:36:39.483695" elapsed="0.006449"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Exit For Loop" owner="BuiltIn">
+<msg time="2025-07-17T09:36:39.493962" level="INFO">Exiting for loop altogether.</msg>
+<doc>Stops executing the enclosing FOR loop.</doc>
+<status status="PASS" start="2025-07-17T09:36:39.493128" elapsed="0.001386"/>
+</kw>
+<arg>'${channel_name}' == '${CHANNEL_TO_DELETE}'</arg>
+<arg>Exit For Loop</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-07-17T09:36:39.490832" elapsed="0.004002"/>
+</kw>
+<var name="${video}">xpath=//ytd-playlist-video-renderer &gt;&gt; nth=0</var>
+<status status="PASS" start="2025-07-17T09:36:35.077325" elapsed="4.417808"/>
+</iter>
+<var>${video}</var>
+<value>@{videos}</value>
+<status status="PASS" start="2025-07-17T09:36:35.075547" elapsed="4.419991"/>
+</for>
+<status status="PASS" start="2025-07-17T09:36:32.992407" elapsed="6.503269"/>
+</iter>
+<status status="PASS" start="2025-07-17T09:36:32.992405" elapsed="6.503543"/>
+</while>
+<arg>IGN</arg>
+<doc>Delete movies from the watchlist</doc>
+<status status="PASS" start="2025-07-17T09:36:29.170280" elapsed="10.325812"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-07-17T09:36:44.497299" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-07-17T09:36:39.496538" elapsed="5.001624"/>
+</kw>
+<kw name="Close Browser" owner="Browser">
+<msg time="2025-07-17T09:36:44.890176" level="INFO">Closed browser</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-07-17T09:36:44.499358" elapsed="0.391331"/>
+</kw>
+<doc>This test case logs into YouTube using the provided credentials.</doc>
+<status status="PASS" start="2025-07-17T09:36:10.256894" elapsed="34.634438"/>
+</test>
+<status status="PASS" start="2025-07-17T09:36:10.005671" elapsed="34.899487"/>
+</suite>
+<status status="PASS" start="2025-07-17T09:36:10.001532" elapsed="34.932987"/>
+</suite>
+<status status="PASS" start="2025-07-17T09:36:09.967955" elapsed="34.968924"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Yt Watchlist" id="s1" pass="1" fail="0" skip="0">Yt Watchlist</stat>
+<stat name="Tests" id="s1-s1" pass="1" fail="0" skip="0">Yt Watchlist.Tests</stat>
+<stat name="Test Watchlist" id="s1-s1-s1" pass="1" fail="0" skip="0">Yt Watchlist.Tests.Test Watchlist</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
