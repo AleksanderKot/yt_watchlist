@@ -1,2 +1,2 @@
-YT_LOGIN = 'akot522@gmail.com'
-YT_PASSWORD = 'TheDreadnoughts2005'
+YT_LOGIN = ''
+YT_PASSWORD = ''
