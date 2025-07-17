@@ -9,6 +9,6 @@ Log Into Youtube To Delete Watchlist
     [Documentation]      This test case logs into YouTube using the provided credentials.
     Youtube Login
     Sleep                5s
-    Delete Movies        IGN
+    Delete Movies        G.F. Darwin
     Sleep                5s
     Close Browser
