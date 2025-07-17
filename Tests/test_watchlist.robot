@@ -9,6 +9,8 @@ Log Into Youtube To Delete Watchlist
     [Documentation]      This test case logs into YouTube using the provided credentials.
     Youtube Login
     Sleep                5s
+    Go To                https://www.youtube.com/playlist?list=WL
+    Sleep                5s
     Delete Movies        G.F. Darwin
     Sleep                5s
     Close Browser

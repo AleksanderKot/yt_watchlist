@@ -18,28 +18,28 @@ Youtube Login
     Click             xpath=//*[@id="passwordNext"]/div/button
 
 Delete Movies
-    [Documentation]   Delete all movies from the watchlist for a given channel
-    [Arguments]       ${CHANNEL_TO_DELETE}
-    Go To             https://www.youtube.com/playlist?list=WL
-    Sleep             2s
-    FOR               ${index}    IN RANGE    100
-        Sleep              2s
-        ${videos}=         Get Elements     xpath=//ytd-playlist-video-renderer
-        ${any_deleted}=    Set Variable    ${False}
-        IF     ${videos}
-            FOR    ${video}         IN           @{videos}
-                ${channel_name}=    Evaluate JavaScript     ${video}    (el) => el.querySelector('div#byline-container a[href*="/@"]')?.textContent
-                ${ns}=              Create Dictionary       channel_name=${channel_name}
-                ${channel_name}=    Evaluate                str(channel_name).strip()    namespace=${ns}
-                IF                  '${channel_name}' == '${CHANNEL_TO_DELETE}'
-                    Delete Single Movie     ${video}
-                    Set Variable            ${any_deleted}    ${True}
-                END
-            END
-        END
-        IF            not ${any_deleted}
+    [Arguments]   ${CHANNEL_TO_DELETE}
+    ${videos}=    Get Elements    xpath=//ytd-playlist-video-renderer
+    ${found}=     Set Suite Variable    ${False}
+    Log           Keyword uruchomiony       console=${True}
+    FOR    ${video}    IN    @{videos}
+        Log           Pętla uruchomiona       console=${True}
+        ${channel_name}=    Evaluate JavaScript    ${video}    (el) => el.querySelector('div#byline-container a[href*="/@"]')?.textContent
+        ${ns}=    Create Dictionary    channel_name=${channel_name}
+        ${channel_name}=    Evaluate    str(channel_name).strip()    namespace=${ns}
+        Log           Stan found przed: ${found}       console=${True}
+        IF    '${channel_name}' == '${CHANNEL_TO_DELETE}'
+            Log    USUWAM: ${channel_name}    console=${True}
+            Delete Single Movie    ${video}
+            Sleep    2s
+            Set Suite Variable    ${found}    ${True}
             BREAK
         END
+    END
+    Log           Stan found po: ${found}       console=${True}
+    IF    ${found}
+        Log              Znaleziono film, puszczam pętle jeszcze raz        console=${True}
+        Delete Movies    ${CHANNEL_TO_DELETE}
     END
 
 Delete Single Movie
