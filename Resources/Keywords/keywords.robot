@@ -19,6 +19,7 @@ Youtube Login
     Click             xpath=${PASSWORD_NEXT}
 
 Delete Movies
+    [Documentation]   Deletes movies from the watchlist for a specific channel.
     [Arguments]       ${CHANNEL_TO_DELETE}
     ${videos}=        Get Elements    xpath=${PLAYLIST_RENDERER}
     ${found}=         Set Suite Variable    ${False}
@@ -44,6 +45,7 @@ Delete Movies
     END
 
 Delete Single Movie
+    [Documentation]   Deletes a single movie from the watchlist.
     [Arguments]             ${video}
     Evaluate JavaScript     ${video}         (el) => el.scrollIntoView({behavior: "smooth", block: "center"})
     Sleep                   1s

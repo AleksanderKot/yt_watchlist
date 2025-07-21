@@ -2,8 +2,8 @@
 Library           Browser
 Library           OperatingSystem
 Library           String
-Variables         ${EXECDIR}/Resources/logvariables.py
-Resource          ${EXECDIR}/Resources/Keywords/keywords.robot
+Variables         ${EXECDIR}${/}Resources${/}logvariables.py
+Resource          ${EXECDIR}${/}Resources${/}Keywords${/}keywords.robot
 
 *** Test Cases ***
 Log Into Youtube To Delete Watchlist
