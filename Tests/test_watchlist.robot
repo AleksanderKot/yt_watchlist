@@ -13,7 +13,7 @@ Log Into Youtube To Delete Watchlist
 
     Youtube Login
     Sleep                5s
-    Go To                https://www.youtube.com/playlist?list=WL
+    Go To                ${YT_WL_URL}
     Sleep                5s
     FOR    ${channel}    IN    @{channels_list}
         Log                 Sprawdzam channel: ${channel}    console=${True}
@@ -25,5 +25,4 @@ Log Into Youtube To Delete Watchlist
         END
     END
     #Delete Movies        G.F. Darwin
-    Sleep                5s
     Close Browser
